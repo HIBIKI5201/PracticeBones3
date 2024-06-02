@@ -7,6 +7,10 @@ public class PlayerController : MonoBehaviour
     [Header("プレイヤー")]
     [SerializeField] GameObject Player;
 
+    [Header("カメラ")]
+    [SerializeField] GameObject Camera;
+    [SerializeField] Vector3 _cameraPosition;
+
     [Header("コンポーネント")]
     [SerializeField] GunShotManager GSManager;
     [SerializeField] Rigidbody2D playerRB;
@@ -48,5 +52,7 @@ public class PlayerController : MonoBehaviour
             playerAnimator.SetBool("Move", false);
             playerAnimator.SetBool("BackMove", false);
         }
+
+        Camera.transform.position = Player.transform.position + _cameraPosition;
     }
 }
