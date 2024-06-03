@@ -39,18 +39,18 @@ public class PlayerController : MonoBehaviour
             if (horizontal > 0)
             {
                 playerAnimator.SetBool("Move", true);
-                playerAnimator.SetBool("BackMove", false);
+                playerAnimator.SetBool("MoveBack", false);
             }
             if (horizontal < 0)
             {
-                playerAnimator.SetBool("BackMove", true);
+                playerAnimator.SetBool("MoveBack", true);
                 playerAnimator.SetBool("Move", false);
             }           
         }
         else
         {
             playerAnimator.SetBool("Move", false);
-            playerAnimator.SetBool("BackMove", false);
+            playerAnimator.SetBool("MoveBack", false);
         }
 
         Camera.transform.position = Player.transform.position + _cameraPosition;

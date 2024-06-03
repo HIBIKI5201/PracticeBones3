@@ -19,7 +19,7 @@ public class GunShotManager : MonoBehaviour
     public void ShotBullet()
     {
         GameObject bullet = Instantiate(BulletPrefab, MuzzlePosition.position, Quaternion.identity);
-        bullet.transform.rotation = Quaternion.Euler(0, 0, GMManager.mouseAngle);
+        bullet.transform.rotation = Quaternion.Euler(0, 0, GMManager._mouseAngle);
         Vector2 localDirection = bullet.transform.right;
         Vector2 force = localDirection * _bulletSpeed;
 
