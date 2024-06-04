@@ -36,12 +36,11 @@ public class PlayerController : MonoBehaviour
         {
             playerRB.velocity = new Vector2 (_moveSpeed * horizontal, playerRB.velocity.y);
 
-            if (horizontal > 0)
+            if (horizontal == Mathf.Sign(transform.localScale.x))
             {
                 playerAnimator.SetBool("Move", true);
                 playerAnimator.SetBool("MoveBack", false);
-            }
-            if (horizontal < 0)
+            } else
             {
                 playerAnimator.SetBool("MoveBack", true);
                 playerAnimator.SetBool("Move", false);
